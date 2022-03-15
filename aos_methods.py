@@ -362,6 +362,20 @@ def validate_no_order():
     print(driver.find_element(By.XPATH, '//label[contains(., " - No orders - ")]').is_displayed())
     sleep(locators.sleep_value)
     driver.find_element(By.LINK_TEXT, 'CONTINUE SHOPPING').click()
+
+# delete user
+def delete_user():
+    sleep(locators.sleep_value)
+    driver.find_element(By.XPATH, '//*[@id="hrefUserIcon"]').click()
+    driver.find_element(By.XPATH, '/html[1]/body[1]/header[1]/nav[1]/ul[1]/li[3]/a[1]/div[1]/label[1]').click()
+    sleep(locators.sleep_value)
+    driver.find_element(By.XPATH, '//div[contains(text(),"Delete Account")]').click()
+    sleep(locators.sleep_value)
+    driver.find_element(By.XPATH, '//div[contains(text(),"yes")]').click()
+    sleep(locators.sleep_value)
+    print('Account deleted successfully')
+
+    
 # Call methods from here
 # setUp()
 # create_new_user()

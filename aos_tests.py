@@ -1,8 +1,6 @@
 import unittest
-from datetime import datetime
-from time import sleep
-
 import aos_methods as methods
+from time import sleep
 
 class AosAppPositiveTestCases(unittest.TestCase):   # create class
 
@@ -33,6 +31,12 @@ class AosAppPositiveTestCases(unittest.TestCase):   # create class
         # -------- LOGIN AS NEW USER -----------------
         sleep(0.25)
         methods.login()
+        # --------Shopping cart checkout functionality  validation ---------------
+        sleep(0.25)
+        methods.validate_add_itemto_shopping_cart()
+        #----------Validate no order is displayed -------
+        sleep(0.25)
+        methods.validate_no_order()
         sleep(0.25)
         methods.logout()
         # -------------------------
